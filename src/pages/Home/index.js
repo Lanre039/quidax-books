@@ -25,8 +25,8 @@ const HomeComponent = ({ setOpen, open, search }) => {
 
   useEffect(() => {
     if (search) {
-      const res = handleSearch(books, search);
-      setSearchResult(res);
+      const result = handleSearch(books, search);
+      setSearchResult(result ?? []);
     } else {
       setSearchResult([]);
     }
