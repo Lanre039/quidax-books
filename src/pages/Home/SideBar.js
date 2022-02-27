@@ -111,7 +111,6 @@ const Wrapper = styled.div`
 
   .image {
     width: 70px;
-    background: blue;
     margin-right: 10px;
   }
 

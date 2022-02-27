@@ -35,35 +35,39 @@ const ProductDetails = ({ open, setOpen }) => {
     data && (
       <Wrapper>
         <aside className="content-left">
-          <div onClick={() => navigate(-1)} className="flex align cursor">
-            <span>
-              <BsArrowLeftShort size="25px" />
-            </span>
-            <span className="top-text ml">Back</span>
-          </div>
-          <div>
-            <div className="image">
-              <img
-                src={data.image_url}
-                alt={data.title.trim()}
-                width="100%"
-                height="100%"
-              />
+          <div className="aside-scroll">
+            <div onClick={() => navigate(-1)} className="flex align cursor">
+              <span>
+                <BsArrowLeftShort size="25px" />
+              </span>
+              <span className="top-text ml">Back</span>
             </div>
-            <p className="tag hide">{data.available_copies} Copies Available</p>
-            <h3 className="price hide">
-              {formatCurrency(data.currency ?? "USD", data.price)}
-            </h3>
-            <div className="btn-cart">
-              <Button
-                title="Add to Cart"
-                handleClick={() => {
-                  if (data.available_copies) {
-                    dispatch(addItemToCart(data));
-                    toggleSidebar();
-                  }
-                }}
-              />
+            <div>
+              <div className="image">
+                <img
+                  src={data.image_url}
+                  alt={data.title.trim()}
+                  width="100%"
+                  height="100%"
+                />
+              </div>
+              <p className="tag hide">
+                {data.available_copies} Copies Available
+              </p>
+              <h3 className="price hide">
+                {formatCurrency(data.currency ?? "USD", data.price)}
+              </h3>
+              <div className="btn-cart">
+                <Button
+                  title="Add to Cart"
+                  handleClick={() => {
+                    if (data.available_copies) {
+                      dispatch(addItemToCart(data));
+                      toggleSidebar();
+                    }
+                  }}
+                />
+              </div>
             </div>
           </div>
         </aside>
