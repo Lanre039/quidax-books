@@ -40,6 +40,9 @@ const Wrapper = styled.div`
     padding: 35px;
     padding-left: 40px;
     margin-top: 30px;
+    @media only screen and (max-width: 330px) {
+      padding: 35px 20px;
+    }
 
     .books-section {
       display: flex;
@@ -58,13 +61,20 @@ const Wrapper = styled.div`
       margin-top: 20px;
       margin-right: 20px;
       margin-bottom: 20px;
-      width: 500px;
+      min-width: 500px;
 
       background-color: #fff;
-      @media only screen and (min-width: 1500px) {
-        width: 500px;
+      @media only screen and (max-width: 1440px) {
+        width: 400px;
+        min-width: auto;
+      }
+      @media only screen and (max-width: 900px) {
+        width: auto;
       }
       @media only screen and (max-width: 800px) {
+        width: 320px;
+      }
+      @media only screen and (max-width: 600px) {
         width: auto;
       }
 
@@ -75,8 +85,11 @@ const Wrapper = styled.div`
 
     .image {
       width: 200px;
-      background: blue;
       margin-right: 10px;
+
+      @media only screen and (max-width: 330px) {
+        width: 140px;
+      }
     }
 
     .details {

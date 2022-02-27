@@ -20,6 +20,11 @@ const Wrapper = styled.div`
     margin-right: 100px;
     text-align: left;
 
+    .aside-scroll {
+      overflow: scroll;
+      height: 70vh;
+    }
+
     @media only screen and (max-width: 600px) {
       position: relative;
       top: 0;
@@ -29,7 +34,6 @@ const Wrapper = styled.div`
     }
 
     .image {
-      background: blue;
       height: 400px;
       width: 250px;
       margin: 20px 0 50px;
